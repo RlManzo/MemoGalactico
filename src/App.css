@@ -18,6 +18,10 @@
 .imgTamaño{
   width: 136px;
   height: 100px;
+  transition: all .2s ease-in-out;
+}
+.imgTamaño:hover{
+  transform:scale(1.2)
 }
 .cardStyles{
   gap: 10px;

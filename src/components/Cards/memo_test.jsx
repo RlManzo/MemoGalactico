@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { findAllInRenderedTree } from 'react-dom/test-utils';
 import { Link } from 'react-router-dom';
 import {Swal} from 'sweetalert2';
 const images = [
@@ -31,16 +32,18 @@ const MemoTest = () => {
 
         
     }
+    const reload = ()=>{
+       window.location='/' 
+    }
     useEffect(()=>{
         if(guessed.length === images.length){
-            mostrarAlerta()
-            
-            //<Link to='/'>alert('you win!');</Link>                 
+            alert('you win!')
+           reload()                
         }
     }, [guessed])
     return (
-    <div className='app row text-center'>
-        <div className='row container cardStyles'>
+    <div className='app  text-center'>
+        <div className='row cardStyles'>
             {images.map((image)=>{
                 const[, url]= image.split("|") 
                 return(
